@@ -1,0 +1,74 @@
+<html>
+<head>
+<title> payment</title>
+<link rel="stylesheet" href="body.css"/>
+</head>
+<body>
+<div class="container">
+<h1 class="label">Payment</h1>
+<form class="form" name="form" method="post" action="order.html" onsubmit="return valid()" >
+<label class="font" for="name">accepted cards</label>
+<select class ="sub" name="cards" id="cards">
+<option value="Visa">Visa</option>
+<option value="Discover">Discover</option>
+<option value="Mastercard">Mastercard</option>
+</select><br><br>
+<label class="font" for="cname">name of the card holder</label>
+<input class="sub" type="text" id="cname" name="cname" ><br><br>
+<label class="font" for="cnum">credit card number</label>
+<input class="sub" type="number" id="cnum" name="cnum"><br><br>
+<label class="font" for="expmonth" >expiration date</label>
+<input class="sub" type="date" id="expdate" name="expdate"><br><br>
+ 
+
+
+
+
+address
+ 
+<label class="font" for="cvv"> card cvv number</label>
+<input class="sub" type="number" id="cvv" name="cvv"><br><br>
+
+<label class="font">
+<input class="nor" type="checkbox" checked="checked" name="sameadr"> Shipping
+
+same as billing
+</input>
+<button type="submit">continue</button>
+<button type="back"><a href="cart.html">back</a></button>
+ 
+</form>
+</div>
+<script>
+var cname = document.forms['form']['cname']; var cnum = document.forms['form']['cnum']; var cvv = document.forms['form']['cvv'];
+
+function valid(){ if(cname.value.length <= 3){
+cname.focus; return true;
+}
+else{
+alert("enter name"); return false;
+}
+}
+function valid(){ if(cnum.value.length == 16){
+cnum.focus; return true;
+}
+else{
+return false;
+}
+}
+function valid(){ if(cvv.value.length == 3){
+cvv.focus; return true;
+}
+else{
+alert("enter cvv"); return false;
+}
+}
+</script>
+<style>
+.form .sub{ width:350px;
+}
+</style>
+
+</body>
+ 
+</html>
